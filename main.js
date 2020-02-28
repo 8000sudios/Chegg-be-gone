@@ -1,14 +1,24 @@
-elements = document.getElementsByClassName("srg")
+//Checks to see if extention is enabled
+chrome.storage.sync.get(['config'], function(result) {
+    if(result.config.enable){
+        remove()
+    }
+})
 
-if(elements.length > 0) {
-    for(i = 0; i <= elements.length; i++) {
+//When run, removes all chegg elements from search results
+function remove() {
+    elements = document.getElementsByClassName("srg")
 
-        results = elements[i]["childNodes"]
+    if(elements.length > 0) {
+        for(i = 0; i <= elements.length; i++) {
 
-        for(i = 0; i < results.length; i++) {
-            if(results[i]["innerText"].includes("www.chegg.com")) {
-                results[i].remove()
-                i--
+            results = elements[i]["childNodes"]
+
+            for(i = 0; i < results.length; i++) {
+                if(results[i]["innerText"].includes("www.chegg.com")) {
+                    results[i].remove()
+                    i--
+                }
             }
         }
     }

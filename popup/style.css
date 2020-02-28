@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    height: 20em;
+    width: 15em;
+}
+
+div.main {
+    padding: 0;
+    margin: 0;
+}
+
+div.head {
+    background-color: darkgray;
+    background-size: 100%;
+    text-align: center;
+}
