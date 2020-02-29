@@ -1,6 +1,6 @@
 //Updates enableBox to current status
-chrome.storage.sync.get(['config'], function(result) {
-    if(result.config.enable){
+chrome.storage.sync.get(['enable'], function(result) {
+    if(result.enable){
         document.getElementById("enableBox").checked = true;
     }
 })
@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //Event listener for when enable is toggled
     enableBox.addEventListener('click', function() {
         chrome.storage.sync.set({
-            "config": {
-                "enable": enableBox.checked
-            }
+            "enable":  enableBox.checked
         })
     });
 });

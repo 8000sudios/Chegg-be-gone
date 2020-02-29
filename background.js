@@ -4,11 +4,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 
     switch (reason) {
         case 'install':
-            chrome.storage.sync.set({
-                "config": {
-                    "enable": true
-                }
-            })
+            chrome.storage.sync.set({"enable":  enableBox.checked})
             break;
     }
 })

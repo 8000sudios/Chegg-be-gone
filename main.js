@@ -1,6 +1,6 @@
 //Checks to see if extention is enabled
-chrome.storage.sync.get(['config'], function(result) {
-    if(result.config.enable){
+chrome.storage.sync.get(['enable'], function(result) {
+    if(result.enable){
         remove()
     }
 })
